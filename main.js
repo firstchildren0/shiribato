@@ -2,12 +2,24 @@ let history = [];
 let startTime;
 let nickname = "";
 
+const aiDictionary = {
+    "し": "しまうま",
+    "ま": "まつり",
+    "り": "りす",
+    "す": "すもう",
+    "う": "うさぎ",
+    "ぎ": "ぎんこう",
+    "こ": "こうえん",
+    "ん": null // 終了条件
+};
+
 function startGame() {
     nickname = document.getElementById('nickname').value;
     if (!nickname) return alert('ニックネームを入力してね');
     document.getElementById('game').style.display = 'block';
     document.getElementById('nickname').disabled = true;
     startTime = Date.now();
+    history = [];
     addToHistory("しりとりスタート！");
 }
 
@@ -24,16 +36,16 @@ function submitWord() {
     history.push(input);
     addToHistory(input);
 
-    // Simulate AI response
+    // AIの返答
     setTimeout(() => {
-        const aiWord = input.slice(-1) + "たいけん";
-        if (aiWord.endsWith("ん")) {
+        const aiWord = aiDictionary[input.slice(-1)];
+        if (!aiWord || aiWord.endsWith("ん")) {
             endGame("あなたの勝ち！");
             return;
         }
         history.push(aiWord);
         addToHistory(aiWord);
-    }, 1000);
+    }, 800);
 }
 
 function addToHistory(text) {
