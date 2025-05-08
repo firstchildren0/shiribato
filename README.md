@@ -1,0 +1,2 @@
+# shiribato
+しりとりバトルゲーム：Netlify用
