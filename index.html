@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>しりバト！</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>しりバト！</h1>
+        <input type="text" id="nickname" placeholder="ニックネームを入力">
+        <button onclick="startGame()">スタート</button>
+        <div id="game" style="display:none;">
+            <div id="history"></div>
+            <input type="text" id="userInput" placeholder="単語を入力（4文字以上）">
+            <button onclick="submitWord()">送信</button>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #1a1a1a, #333);
+    color: white;
+    text-align: center;
+    padding: 2em;
+}
+input, button {
+    padding: 0.5em;
+    margin: 0.5em;
+    font-size: 1.2em;
+}
+#history {
+    margin-top: 1em;
+    border-top: 1px solid #ccc;
+    padding-top: 1em;
+}
