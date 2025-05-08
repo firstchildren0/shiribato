@@ -1,17 +1,56 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #1a1a1a, #333);
-    color: white;
-    text-align: center;
-    padding: 2em;
+  font-family: 'Arial', sans-serif;
+  background: black;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+#battle-ui {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background: #111;
+}
+.fighter {
+  width: 45%;
+}
+.name {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.health {
+  width: 100%;
+  background: #444;
+  height: 20px;
+  margin-top: 5px;
+}
+.bar {
+  height: 100%;
+  background: limegreen;
+  width: 100%;
+}
+#log {
+  min-height: 150px;
+  margin: 1em auto;
+  width: 90%;
+  background: #222;
+  padding: 1em;
+  text-align: left;
+  border: 1px solid #555;
+}
+#input-area {
+  margin: 2em auto;
 }
 input, button {
-    padding: 0.5em;
-    margin: 0.5em;
-    font-size: 1.2em;
+  padding: 0.5em;
+  font-size: 1em;
+  margin: 0.5em;
 }
-#history {
-    margin-top: 1em;
-    border-top: 1px solid #ccc;
-    padding-top: 1em;
+.hit {
+  animation: flash 0.5s ease;
+}
+@keyframes flash {
+  0% { background-color: red; }
+  100% { background-color: transparent; }
 }

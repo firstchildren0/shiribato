@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>しりバト！</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>しりバト！ストII風</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div id="app">
-        <h1>しりバト！</h1>
-        <input type="text" id="nickname" placeholder="ニックネームを入力">
-        <button onclick="startGame()">スタート</button>
-        <div id="game" style="display:none;">
-            <div id="history"></div>
-            <input type="text" id="userInput" placeholder="単語を入力（4文字以上）">
-            <button onclick="submitWord()">送信</button>
-            <div id="result"></div>
-        </div>
+  <div id="battle-ui">
+    <div class="fighter player">
+      <div class="name">YOU</div>
+      <div class="health"><div class="bar" id="player-health"></div></div>
     </div>
-    <script src="main.js"></script>
+    <div class="fighter ai">
+      <div class="name">AI</div>
+      <div class="health"><div class="bar" id="ai-health"></div></div>
+    </div>
+  </div>
+  <div id="log"></div>
+  <div id="input-area">
+    <input type="text" id="nickname" placeholder="ニックネームを入力" />
+    <button onclick="startGame()">スタート</button><br />
+    <input type="text" id="userInput" placeholder="単語を入力（3文字以上）" disabled />
+    <button onclick="submitWord()">送信</button>
+  </div>
+  <div id="result"></div>
+  <script src="main.js"></script>
 </body>
 </html>
