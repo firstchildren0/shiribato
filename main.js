@@ -10,7 +10,22 @@ const aiDictionary = {
     "う": "うさぎ",
     "ぎ": "ぎんこう",
     "こ": "こうえん",
-    "ん": null // 終了条件
+    "ん": null,
+    "に": "にんぎょ",
+    "ょ": "ようせい",
+    "い": "いちご",
+    "ご": "ごりら",
+    "ら": "らいおん",
+    "ん": null,
+    "お": "おにぎり",
+    "き": "きつね",
+    "ね": "ねこ",
+    "こ": "こまつな",
+    "な": "なすび",
+    "び": "びーだま",
+    "た": "たいやき",
+    "け": "けしごむ",
+    "む": "むしめがね"
 };
 
 function startGame() {
@@ -20,6 +35,9 @@ function startGame() {
     document.getElementById('nickname').disabled = true;
     startTime = Date.now();
     history = [];
+    document.getElementById('result').textContent = "";
+    document.getElementById('history').innerHTML = "";
+    document.getElementById('userInput').disabled = false;
     addToHistory("しりとりスタート！");
 }
 
@@ -35,6 +53,7 @@ function submitWord() {
     }
     history.push(input);
     addToHistory(input);
+    document.getElementById('userInput').value = "";
 
     // AIの返答
     setTimeout(() => {
